@@ -13,16 +13,27 @@ public class Janela extends JFrame {
 			// A pintura ocorre aqui
 				g.setColor(Color.BLUE);
 				g.drawLine(0, 240, 640, 240);
+				g.drawRect(10, 25, 20, 20);
+				g.drawOval(30, 20, 40, 30);
+
+				g.setColor(Color.YELLOW);
+				g.drawLine(320, 0, 320, 4800);
+				g.fillRect(110, 125, 120, 120);
+				g.fillOval(230, 220, 240, 230);
+
+				g.setColor(Color.RED);
+				g.drawString("Eu seria um otimo Score!", 5, 10);
 
 			}
 		};
 
-		super.getContentPane().add(tela);
+		getContentPane().add(tela);
 
 		// Configurações da janela
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(640, 480);
 		setVisible(true);
+		tela.repaint();
 	}
 
 
