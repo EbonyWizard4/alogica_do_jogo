@@ -9,6 +9,7 @@ public class Janela extends JFrame {
 		tela = new JPanel() {
 			@Override
 			public void paintComponent(Graphics g) {
+				super.paintComponent(g);
 
 			// A pintura ocorre aqui
 				g.setColor(Color.BLUE);
@@ -27,13 +28,14 @@ public class Janela extends JFrame {
 			}
 		};
 
-		getContentPane().add(tela);
 
 		// Configurações da janela
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(640, 480);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().add(tela);
+		setLocationRelativeTo(null);
 		setVisible(true);
-		tela.repaint();
+		//tela.repaint();
 	}
 
 
