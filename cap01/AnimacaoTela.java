@@ -3,8 +3,28 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Janela extends JFrame {
+public class AnimacaoTela extends JFrame {
 	private JPanel tela;
+	private int fps = 1000/20; // frame do projeto = 50
+	private int ct; //xontador
+	private boolean anima = true;
+
+	public void iniciaAbimacao() {
+		long prxAtualizacao = 0;
+		while (anima) {
+			if (System.currentTimeMillis() >= prxAtualizacao)
+				ct++;
+				tela.repaint();
+
+				prxAtualizacao = System.currentTimeMillis() + fps;
+
+			if (ct == 100)
+				anima = false;
+
+		}
+
+	}
+	
 	public Janela() {
 		tela = new JPanel() {
 			@Override
